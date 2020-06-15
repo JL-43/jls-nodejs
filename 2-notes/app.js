@@ -1,9 +1,9 @@
-const fs = require('fs')
 
-require('./utils.js');
+
+
 
 //1
-
+//const fs = require('fs')
 // //from the video
 // fs.writeFileSync('notes.txt', 'My name is JL')
 
@@ -11,7 +11,11 @@ require('./utils.js');
 // fs.appendFileSync('notes.txt', ' and I like to code')
 
 //2
+// require('./utils.js');
+// const name = 'JL'
+// console.log(name);
 
-const name = 'JL'
+//3
 
+name = require('./utils.js');
 console.log(name);
