@@ -1,8 +1,5 @@
-
-
-
-
 //1
+
 //const fs = require('fs')
 // //from the video
 // fs.writeFileSync('notes.txt', 'My name is JL')
@@ -17,5 +14,17 @@
 
 //3
 
-name = require('./utils.js');
-console.log(name);
+// name = require('./utils.js');
+// console.log(name);
+
+//4
+
+// const add = require('./utils.js')
+// const sum = add(4, -2)
+// console.log(sum)
+
+//5 - Challenge
+
+const getNotes = require('./notes.js')
+console.log(getNotes())
+

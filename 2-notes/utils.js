@@ -4,5 +4,14 @@
 
 //3
 
-const name = 'Luis'
-module.exports = name
+// const name = 'Luis'
+// module.exports = name
+
+//4
+
+// const add = (a, b) => {
+//     return a + b;
+// }
+
+// module.exports = add
+
