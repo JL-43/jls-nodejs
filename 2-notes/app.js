@@ -39,5 +39,5 @@
 //7 - Challenge
 
 const chalk = require('chalk');
-console.log(chalk.blue.bold.inverse('Success!'));
+console.log(chalk.green.bold.inverse('Success!'));
 
