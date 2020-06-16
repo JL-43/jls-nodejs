@@ -30,11 +30,14 @@
 
 //6 
 
-const validator = require('validator');
-const getNotes = require('./notes.js');
+// const validator = require('validator');
+// const getNotes = require('./notes.js');
+// const msg = getNotes();
+// console.log(msg);
+// console.log(validator.isURL('https://jlreyes.com'));
 
-const msg = getNotes();
-console.log(msg);
+//7 - Challenge
 
-console.log(validator.isURL('https://jlreyes.com'));
+const chalk = require('chalk');
+console.log(chalk.green.bold.inverse('Success!'));
 
