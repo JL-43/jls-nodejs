@@ -38,6 +38,18 @@
 
 //7 - Challenge
 
+// const chalk = require('chalk');
+// console.log(chalk.green.bold.inverse('Success!'));
+
+//8
+
 const chalk = require('chalk');
-console.log(chalk.green.bold.inverse('Success!'));
+const getNotes = require('./notes.js');
+const command = process.argv[2];
+
+if(command === 'add'){
+    console.log('Adding note')
+}else if(command === 'remove'){
+    console.log('Removing note')
+}
 
