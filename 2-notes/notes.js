@@ -58,9 +58,19 @@ const listNotes = () => {
     });
 } 
 
+const readNote = (title) => {
+    const notes = loadNotes();
+    const noteToRead = notes.filter((note) => {
+        if(note.title == title){
+            console.log(note.body);
+        }
+    })
+}
+
 module.exports = {
     getNotes,
     addNote,
     removeNote,
-    listNotes
+    listNotes,
+    readNote
 }
