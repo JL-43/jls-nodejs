@@ -1,5 +1,6 @@
 //5 - Challenge
 const fs = require('fs');
+const chalk = require('chalk');
 
 const getNotes = () => {
     return 'Got Notes!'
@@ -26,9 +27,7 @@ const saveNotes = (notes) => {
 
 const addNote = (title, body) => {
     const notes = loadNotes();
-    const duplicateNotes = notes.filter((note) => {
-        return note.title === title
-    })
+    const duplicateNotes = notes.filter((note) => note.title === title)
     if (duplicateNotes.length===0){
         notes.push({
             title: title,
@@ -43,23 +42,21 @@ const addNote = (title, body) => {
 
 const removeNote = (title) => {
     const notes = loadNotes();
-    const notesToKeep = notes.filter((note) => {
-        return note.title !== title
-    })
-
+    const notesToKeep = notes.filter((note) => note.title !== title)
     if(notes.length == notesToKeep.length){
-        console.log('Note with that title doesn\'t exist!')
+        console.log(chalk.bgRed.black('Note with that title doesn\'t exist!'))
     }else{
         saveNotes(notesToKeep);
-        console.log('Note with title "' + title + '" deleted!')
+        console.log(chalk.bgGreen.black('Note with title "' + title + '" deleted!'))
     }
 }
 
 const listNotes = () => {
-    // const notes = loadNotes();
-    // for(note in notes){
-    //     console.log(note.title);
-    // }
+    const notes = loadNotes();
+    const notesArray = notes.filter((note) => note.title)
+    for(note in notesArray){
+        console.log(note);
+    }
 } 
 
 module.exports = {
