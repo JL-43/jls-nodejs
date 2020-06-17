@@ -53,10 +53,9 @@ const removeNote = (title) => {
 
 const listNotes = () => {
     const notes = loadNotes();
-    const notesArray = notes.filter((note) => note.title)
-    for(note in notesArray){
-        console.log(note);
-    }
+    notes.forEach((note) => {
+        console.log(note.title);
+    });
 } 
 
 module.exports = {
