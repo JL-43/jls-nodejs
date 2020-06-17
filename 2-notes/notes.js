@@ -27,10 +27,9 @@ const saveNotes = (notes) => {
 const addNote = (title, body) => {
     const notes = loadNotes();
     const duplicateNotes = notes.filter((note) => {
-        return note.title === title;
+        return note.title === title
     })
-    
-    if (duplicateNotes === 0){
+    if (duplicateNotes.length===0){
         notes.push({
             title: title,
             body: body
@@ -38,16 +37,29 @@ const addNote = (title, body) => {
         saveNotes(notes);
         console.log('New note added!');
     }else{
-        console.log('Note already exists!')
+        console.log('Note already exists!');
     }
 }
 
-const listNotes = () => {
+const removeNote = (title) => {
     const notes = loadNotes();
+    const notesToKeep = notes.filter((note) => {
+        return note.title !== title
+    })
+
+    saveNotes(notesToKeep);
+}
+
+const listNotes = () => {
+    // const notes = loadNotes();
+    // for(note in notes){
+    //     console.log(note.title);
+    // }
 } 
 
 module.exports = {
     getNotes,
     addNote,
+    removeNote,
     listNotes
 }
