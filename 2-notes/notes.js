@@ -47,7 +47,12 @@ const removeNote = (title) => {
         return note.title !== title
     })
 
-    saveNotes(notesToKeep);
+    if(notes.length == notesToKeep.length){
+        console.log('Note with that title doesn\'t exist!')
+    }else{
+        saveNotes(notesToKeep);
+        console.log('Note with title "' + title + '" deleted!')
+    }
 }
 
 const listNotes = () => {
