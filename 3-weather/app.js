@@ -5,5 +5,6 @@ const query = '14.5995,120.9842'
 const url = `http://api.weatherstack.com/current?access_key=${apikey}&query=${query}`;
 
 request({url: url}, (error, response) => {
-    console.log(response)
+    const data = JSON.parse(response.body);
+    console.log(data.current);
 });
