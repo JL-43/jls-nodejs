@@ -1,7 +1,7 @@
 .DS_Store
 node_modules/
 dist/
-apikey.js
+apikeys.js
 npm-debug.log
 yarn-error.log
 
