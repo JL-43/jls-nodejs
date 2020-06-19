@@ -1,7 +1,7 @@
 const request = require('request');
 const apikeys = require('./apikeys.js');
 
-const weather = (latitude, longitude, location, callback) => {
+const weather = (latitude, longitude, callback) => {
     const geocode = `${latitude},${longitude}`;
     const url = `http://api.weatherstack.com/current?access_key=${apikeys.weatherapikey}&query=${geocode}`;
     request({url: url, json: true}, (error, response) => {
@@ -13,8 +13,7 @@ const weather = (latitude, longitude, location, callback) => {
             callback(undefined, {
                 description: response.body.current.weather_descriptions[0],
                 temperature: response.body.current.temperature,
-                feelslike: response.body.current.feelslike,
-                location: location
+                feelslike: response.body.current.feelslike
             })
         }
     })

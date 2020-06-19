@@ -7,14 +7,14 @@ geocode('Makati', (error, data) => {
         return console.log(error)
     }
 
-    weather(data.latitude, data.longitude, data.location, (error, data) => {
+    weather(data.latitude, data.longitude, (error, weatherdata) => {
         if(error){
             return console.log(error);
         }
         console.log(`Welcome to ${data.location}. 
-            Right now, it's ${data.description} 
-            at ${data.temperature}, 
-            but it feels like ${data.feelslike}`);
+            Right now, it's ${weatherdata.description} 
+            at ${weatherdata.temperature}, 
+            but it feels like ${weatherdata.feelslike}`);
     })
 
 });
