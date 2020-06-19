@@ -1,12 +1,11 @@
 const geocode = require('./utils/geocode.js');
 const weather = require('./utils/weather.js');
+const address = process.argv[2];
 
-geocode('Makati', (error, data) => {
-
+geocode(address, (error, data) => {
     if(error){
         return console.log(error)
     }
-
     weather(data.latitude, data.longitude, (error, weatherdata) => {
         if(error){
             return console.log(error);
