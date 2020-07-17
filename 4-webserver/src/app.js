@@ -22,6 +22,12 @@ app.get('/about', (req, res)=>{
     });
 });
 
+app.get('/help', (req, res)=>{
+    res.render('help', {
+        msg: 'This is a really long help message wow',
+    });
+});
+
 app.get('/weather', (req, res) => {
     res.send([{
         location: 'Manila',
