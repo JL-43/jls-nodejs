@@ -48,8 +48,20 @@ app.get('/weather', (req, res) => {
     }]);
 });
 
-app.get('*', (req, res) => {
-    res.send('My 404 Page');
+app.get('/help/*', (req, res)=>{
+    res.render('404', {
+        title: 'Help',
+        message: 'Help Article Not Found',
+        footer: 'Created by JL'
+    });
+});
+
+app.get('*', (req, res)=>{
+    res.render('404', {
+        title: '404',
+        message: 'Page Not Found',
+        footer: 'Created by JL'
+    });
 });
 
 app.listen(3000, () => {
