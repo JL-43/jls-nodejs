@@ -20,21 +20,24 @@ app.use(express.static(publicDirectoryPath));
 app.get('', (req, res)=>{
     res.render('index', {
         title: 'Weather App',
-        name: 'JL'
+        name: 'JL',
+        footer: 'Created by JL'
     });
 });
 
 app.get('/about', (req, res)=>{
     res.render('about', {
         title: 'About',
-        name: 'JL'
+        name: 'JL',
+        footer: 'Created by JL'
     });
 });
 
 app.get('/help', (req, res)=>{
     res.render('help', {
         title: 'Help',
-        msg: 'JL'
+        msg: 'JL',
+        footer: 'Created by JL'
     });
 });
 
